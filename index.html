@@ -1558,7 +1558,10 @@ button { font: inherit; cursor: pointer; }
   border: 1px solid rgba(181, 208, 207, 0.25);
   border-radius: var(--radius);
   padding: var(--space-24) var(--space-20);
+  display: flex;
+  flex-direction: column;
 }
+.wrapup-step__body { flex: 1; }
 .wrapup-step__num {
   font-family: var(--font-label);
   font-size: 10px;
@@ -1597,10 +1600,121 @@ button { font: inherit; cursor: pointer; }
 .wrapup-steps--three .wrapup-step__title { font-size: 22px; }
 .wrapup-steps--three .wrapup-step__body { font-size: 13.5px; }
 .wrapup-steps--five { grid-template-columns: repeat(5, 1fr); gap: var(--space-16); }
-.wrapup-steps--five .wrapup-step { padding: var(--space-20) var(--space-16); }
-.wrapup-steps--five .wrapup-step__time { font-size: 18px; }
-.wrapup-steps--five .wrapup-step__title { font-size: 15px; }
-.wrapup-steps--five .wrapup-step__body { font-size: 11.5px; }
+.wrapup-steps--five .wrapup-step { padding: var(--space-24) var(--space-20); }
+.wrapup-steps--five .wrapup-step__time { font-size: 20px; }
+.wrapup-steps--five .wrapup-step__title { font-size: 17px; line-height: 1.2; }
+.wrapup-steps--five .wrapup-step__body { font-size: 13.5px; line-height: 1.6; }
+.wrapup-step__example {
+  margin-top: var(--space-14);
+  padding-top: var(--space-12);
+  border-top: 1px solid rgba(181, 208, 207, 0.20);
+}
+.wrapup-step__example-label {
+  font-family: var(--font-label);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  color: var(--teal-soft);
+  opacity: 0.80;
+  margin-bottom: var(--space-8);
+}
+.wrapup-step__example-body {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--surface);
+  opacity: 0.88;
+  margin: 0;
+}
+.wrapup-step__example-body em {
+  color: var(--teal-soft);
+  font-style: italic;
+}
+.wrapup-steps--five .wrapup-step__example-label { font-size: 10px; letter-spacing: 0.18em; }
+.wrapup-steps--five .wrapup-step__example-body { font-size: 12.5px; line-height: 1.6; }
+
+/* Integrative model flowcharts (slides 74-77) */
+.int-flow { display: flex; align-items: stretch; gap: var(--space-10); margin-top: var(--space-24); }
+.int-flow--horizontal { flex-direction: row; }
+.int-flow--vertical { flex-direction: column; gap: var(--space-8); flex: 1; }
+.int-flow__node {
+  flex: 1;
+  background: var(--paper);
+  border: 1px solid var(--rule-soft);
+  border-top: 3px solid var(--teal-deep);
+  border-radius: 6px;
+  padding: var(--space-14) var(--space-14);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.int-flow__node--teacher { border-top-color: var(--navy); background: #F3EFE6; }
+.int-flow__num {
+  font-family: var(--font-label);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+.int-flow__title {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.2;
+}
+.int-flow__body {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+  flex: 1;
+}
+.int-flow__example {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--teal-deep);
+  margin: 0;
+  padding-top: var(--space-8);
+  border-top: 1px dashed var(--rule-soft);
+}
+.int-flow__example em { font-style: italic; color: var(--navy); }
+.int-flow__arrow {
+  flex: 0 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-deep);
+  font-size: 24px;
+  font-weight: 300;
+}
+.int-flow--vertical .int-flow__arrow { flex: 0 0 20px; min-height: 20px; }
+.int-flow-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-32); margin-top: var(--space-24); flex: 1; }
+.int-flow-col { display: flex; flex-direction: column; }
+.int-flow-col__title {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--teal-deep);
+  border-bottom: 1px solid var(--teal-deep);
+  padding-bottom: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+.int-flow-col__sub {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--navy);
+  margin: 0 0 var(--space-8);
+  line-height: 1.2;
+}
 
 /* Closing — stripped to thank-you only */
 .slide--close .slide__inner {
@@ -1686,7 +1800,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--cover is-active" data-slide-title="Cover" data-slide-type="Cover">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">01 / 82</span>
+    <span class="top-bar__counter">01 / 83</span>
   </div>
   <div class="slide__inner">
     <div>
@@ -1724,12 +1838,12 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--overview" data-slide-title="Overview" data-slide-type="Overview">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">02 / 82</span>
+    <span class="top-bar__counter">02 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="overview-header">
       <div>
-        <div class="eyebrow">Overview · all 82 slides · 2 class sessions plus a models unit</div>
+        <div class="eyebrow">Overview · all 83 slides · 2 class sessions plus a models unit</div>
         <h2 class="overview-title">The whole course, at a glance. Click any card to jump there.</h2>
         <p class="overview-sub">For navigation during teaching. Class 01 covers multilingual education, UDL, and SIOP. Class 02 covers Nieto's seven characteristics of multicultural education. The models unit covers Estes and Mintz on the Vocabulary Acquisition Model and the Integrative Model. Section dividers, prompts, and in class activities are marked with a top accent.</p>
       </div>
@@ -1793,8 +1907,8 @@ button { font: inherit; cursor: pointer; }
       <button class="overview-card overview-card--accent" type="button" data-slide-target="56"><span class="overview-card__num">Slide 56</span><h3 class="overview-card__title">Section divider — Vocabulary Acquisition Model</h3><span class="overview-card__type">Section</span></button>
       <button class="overview-card overview-card--prompt" type="button" data-slide-target="63"><span class="overview-card__num">Slide 63</span><h3 class="overview-card__title">Pair share — which organizer fits</h3><span class="overview-card__type">Prompt</span></button>
       <button class="overview-card overview-card--accent" type="button" data-slide-target="71"><span class="overview-card__num">Slide 71</span><h3 class="overview-card__title">Section divider — Integrative Model</h3><span class="overview-card__type">Section</span></button>
-      <button class="overview-card overview-card--activity" type="button" data-slide-target="81"><span class="overview-card__num">Slide 81</span><h3 class="overview-card__title">Sample lesson plan for Activity 2</h3><span class="overview-card__type">Handout</span></button>
-      <button class="overview-card" type="button" data-slide-target="82"><span class="overview-card__num">Slide 82</span><h3 class="overview-card__title">Final close</h3><span class="overview-card__type">Close</span></button>
+      <button class="overview-card overview-card--activity" type="button" data-slide-target="82"><span class="overview-card__num">Slide 82</span><h3 class="overview-card__title">Sample lesson plan for Activity 2</h3><span class="overview-card__type">Handout</span></button>
+      <button class="overview-card" type="button" data-slide-target="83"><span class="overview-card__num">Slide 83</span><h3 class="overview-card__title">Final close</h3><span class="overview-card__type">Close</span></button>
     </div>
   </div>
   <div class="deck-credit">Built with <strong>Anyra</strong></div>
@@ -1803,7 +1917,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Introductions" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">03 / 82</span>
+    <span class="top-bar__counter">03 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -1838,7 +1952,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="Academic terms for today" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">04 / 82</span>
+    <span class="top-bar__counter">04 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -1884,7 +1998,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--agenda" data-slide-title="Agenda" data-slide-type="Agenda">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">05 / 82</span>
+    <span class="top-bar__counter">05 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="agenda-header">
@@ -1932,7 +2046,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="Opening prompt" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">06 / 82</span>
+    <span class="top-bar__counter">06 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 5 minutes</div>
@@ -1945,7 +2059,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--divider" data-slide-title="Section divider — Who English learners are" data-slide-type="Section">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">07 / 82</span>
+    <span class="top-bar__counter">07 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow eyebrow--plain">Section 01 of 03</div>
@@ -1960,7 +2074,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--stat" data-slide-title="The headline number" data-slide-type="Stat">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">08 / 82</span>
+    <span class="top-bar__counter">08 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow stat-hero-eyebrow">The headline number</div>
@@ -1974,7 +2088,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--callouts" data-slide-title="Four signals about ELLs" data-slide-type="Data">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">09 / 82</span>
+    <span class="top-bar__counter">09 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="callout-header">
@@ -2011,7 +2125,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--spread" data-slide-title="The frame" data-slide-type="Editorial">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">10 / 82</span>
+    <span class="top-bar__counter">10 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow" style="margin-bottom: var(--space-24);">The frame we are proposing</div>
@@ -2043,7 +2157,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="What surprised you" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">11 / 82</span>
+    <span class="top-bar__counter">11 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 5 minutes</div>
@@ -2056,7 +2170,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="Four goals of multilingual education" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">12 / 82</span>
+    <span class="top-bar__counter">12 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -2117,7 +2231,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Four goals in depth" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">13 / 82</span>
+    <span class="top-bar__counter">13 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2152,7 +2266,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="Which goal lives in your instinct" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">14 / 82</span>
+    <span class="top-bar__counter">14 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 6 minutes</div>
@@ -2165,7 +2279,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--compare" data-slide-title="Two students, same lesson" data-slide-type="Compare">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">15 / 82</span>
+    <span class="top-bar__counter">15 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="compare-header">
@@ -2203,7 +2317,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Why L2 content learning is hard" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">16 / 82</span>
+    <span class="top-bar__counter">16 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2242,7 +2356,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Planning and scaffolding moves" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">17 / 82</span>
+    <span class="top-bar__counter">17 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2281,7 +2395,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Tier 1, 2, 3 vocabulary defined" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">18 / 82</span>
+    <span class="top-bar__counter">18 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2316,7 +2430,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Language routines defined" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">19 / 82</span>
+    <span class="top-bar__counter">19 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2355,7 +2469,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="Plan a routine" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">20 / 82</span>
+    <span class="top-bar__counter">20 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 6 minutes</div>
@@ -2368,7 +2482,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="UDL · the credential program framework" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">21 / 82</span>
+    <span class="top-bar__counter">21 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2403,7 +2517,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="UDL gives ELLs grade level access" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">22 / 82</span>
+    <span class="top-bar__counter">22 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2446,7 +2560,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="Probe your own learning" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">23 / 82</span>
+    <span class="top-bar__counter">23 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 8 minutes</div>
@@ -2459,7 +2573,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Wonderings before we move on" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">24 / 82</span>
+    <span class="top-bar__counter">24 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2502,7 +2616,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Week 1 assignments" data-slide-type="Assign">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">25 / 82</span>
+    <span class="top-bar__counter">25 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="assign-grid">
@@ -2549,7 +2663,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Week 2 assignments" data-slide-type="Assign">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">26 / 82</span>
+    <span class="top-bar__counter">26 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="assign-grid">
@@ -2604,7 +2718,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--close" data-slide-title="Close" data-slide-type="Close">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">27 / 82</span>
+    <span class="top-bar__counter">27 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="close-eyebrow">Class 01 of 02 · Until our next class</div>
@@ -2616,7 +2730,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--divider" data-slide-title="Section divider — The SIOP model" data-slide-type="Section">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">28 / 82</span>
+    <span class="top-bar__counter">28 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow eyebrow--plain">Section 02 of 03</div>
@@ -2631,7 +2745,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--stat" data-slide-title="SIOP at a glance" data-slide-type="Stat">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">29 / 82</span>
+    <span class="top-bar__counter">29 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow stat-hero-eyebrow">SIOP at a glance</div>
@@ -2645,7 +2759,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--spread" data-slide-title="Why SIOP exists" data-slide-type="Editorial">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">30 / 82</span>
+    <span class="top-bar__counter">30 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow" style="margin-bottom: var(--space-24);">Why SIOP exists</div>
@@ -2677,7 +2791,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="SIOP components 1 to 4" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">31 / 82</span>
+    <span class="top-bar__counter">31 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -2740,7 +2854,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="SIOP components 5 to 8" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">32 / 82</span>
+    <span class="top-bar__counter">32 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -2805,7 +2919,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--compare" data-slide-title="What changes with SIOP" data-slide-type="Compare">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">33 / 82</span>
+    <span class="top-bar__counter">33 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="compare-header">
@@ -2873,7 +2987,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="Pick one row" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">34 / 82</span>
+    <span class="top-bar__counter">34 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 6 minutes</div>
@@ -2886,7 +3000,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Real classroom applications" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">35 / 82</span>
+    <span class="top-bar__counter">35 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2925,7 +3039,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="When the example breaks" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">36 / 82</span>
+    <span class="top-bar__counter">36 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 6 minutes</div>
@@ -2938,7 +3052,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="The empirical case for SIOP" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">37 / 82</span>
+    <span class="top-bar__counter">37 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -2977,7 +3091,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="Which component is your growth edge" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">38 / 82</span>
+    <span class="top-bar__counter">38 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 6 minutes</div>
@@ -2990,7 +3104,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--divider" data-slide-title="Section divider — The ELPAC" data-slide-type="Section">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">39 / 82</span>
+    <span class="top-bar__counter">39 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow eyebrow--plain">Section 03 of 03</div>
@@ -3005,7 +3119,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="ELPAC overview" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">40 / 82</span>
+    <span class="top-bar__counter">40 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -3044,7 +3158,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--wrapup" data-slide-title="Wrap up activity" data-slide-type="Wrapup">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">41 / 82</span>
+    <span class="top-bar__counter">41 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="wrapup-header">
@@ -3085,7 +3199,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--analysis" data-slide-title="Lesson plan analysis" data-slide-type="Analysis">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">42 / 82</span>
+    <span class="top-bar__counter">42 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="analysis-header">
@@ -3139,7 +3253,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--design" data-slide-title="SIOP design activity" data-slide-type="Design">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education, UDL, and the SIOP model</span>
-    <span class="top-bar__counter">43 / 82</span>
+    <span class="top-bar__counter">43 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="design-fit">
@@ -3264,7 +3378,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--divider" data-slide-title="Section divider — Nieto's definition" data-slide-type="Section">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">44 / 82</span>
+    <span class="top-bar__counter">44 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow eyebrow--plain">Section 01 of 03</div>
@@ -3279,7 +3393,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--spread" data-slide-title="The central definition" data-slide-type="Editorial">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">45 / 82</span>
+    <span class="top-bar__counter">45 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow" style="margin-bottom: var(--space-24);">The thesis of the chapter</div>
@@ -3311,7 +3425,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--divider" data-slide-title="Section divider — Seven characteristics" data-slide-type="Section">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">46 / 82</span>
+    <span class="top-bar__counter">46 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow eyebrow--plain">Section 02 of 03</div>
@@ -3326,7 +3440,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="Characteristics 01 to 04" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">47 / 82</span>
+    <span class="top-bar__counter">47 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -3389,7 +3503,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="Discussion — what is pervasive" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">48 / 82</span>
+    <span class="top-bar__counter">48 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 8 minutes</div>
@@ -3402,7 +3516,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="Characteristics 05 to 07" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">49 / 82</span>
+    <span class="top-bar__counter">49 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -3464,7 +3578,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="Discussion — liberation or domestication" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">50 / 82</span>
+    <span class="top-bar__counter">50 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pause · 10 minutes</div>
@@ -3477,7 +3591,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--quote" data-slide-title="Pull quote — Banks" data-slide-type="Quote">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">51 / 82</span>
+    <span class="top-bar__counter">51 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="quote-mark">"</div>
@@ -3490,7 +3604,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--divider" data-slide-title="Section divider — From theory to classroom" data-slide-type="Section">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">52 / 82</span>
+    <span class="top-bar__counter">52 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow eyebrow--plain">Section 03 of 03</div>
@@ -3505,7 +3619,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="From reading to the paper" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">53 / 82</span>
+    <span class="top-bar__counter">53 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -3544,7 +3658,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Classroom paper · full assignment" data-slide-type="Assign">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">54 / 82</span>
+    <span class="top-bar__counter">54 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="assign-grid">
@@ -3590,7 +3704,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Reading before our next class" data-slide-type="Assign">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">55 / 82</span>
+    <span class="top-bar__counter">55 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="assign-grid">
@@ -3623,7 +3737,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--divider" data-slide-title="Section divider — Vocabulary Acquisition Model" data-slide-type="Section">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">56 / 82</span>
+    <span class="top-bar__counter">56 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow eyebrow--plain">Section 01 of 02</div>
@@ -3638,7 +3752,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Principles of the Vocabulary Acquisition Model" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">57 / 82</span>
+    <span class="top-bar__counter">57 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -3677,7 +3791,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--wrapup" data-slide-title="The three step model — overview" data-slide-type="Wrapup">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">58 / 82</span>
+    <span class="top-bar__counter">58 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="wrapup-header">
@@ -3712,7 +3826,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Step 01 · Pre test knowledge of words critical to content" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">59 / 82</span>
+    <span class="top-bar__counter">59 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -3751,7 +3865,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Step 02 · Elaborate and discuss spellings and meanings" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">60 / 82</span>
+    <span class="top-bar__counter">60 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -3790,7 +3904,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Step 03 · Directly teach words on which comprehension hinges" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">61 / 82</span>
+    <span class="top-bar__counter">61 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -3829,7 +3943,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="Graphic organizers for vocabulary acquisition" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">62 / 82</span>
+    <span class="top-bar__counter">62 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -3956,7 +4070,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--prompt" data-slide-title="Pair share · which organizer fits your word" data-slide-type="Prompt">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">63 / 82</span>
+    <span class="top-bar__counter">63 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="prompt-eyebrow">Pair share · 8 minutes</div>
@@ -3969,7 +4083,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--spread" data-slide-title="Building vocabulary through classroom conversation" data-slide-type="Editorial">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">64 / 82</span>
+    <span class="top-bar__counter">64 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow" style="margin-bottom: var(--space-24);">Talk is where words become owned</div>
@@ -4001,7 +4115,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Tying curriculum together — meaningful word parts" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">65 / 82</span>
+    <span class="top-bar__counter">65 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -4040,7 +4154,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="Affix equivalencies in Spanish and English" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">66 / 82</span>
+    <span class="top-bar__counter">66 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -4086,7 +4200,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--compare" data-slide-title="Evaluating learning and meeting individual needs in the VAM" data-slide-type="Compare">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">67 / 82</span>
+    <span class="top-bar__counter">67 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="compare-header">
@@ -4124,7 +4238,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--compare" data-slide-title="Teacher and student behaviors in the VAM" data-slide-type="Compare">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">68 / 82</span>
+    <span class="top-bar__counter">68 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="compare-header">
@@ -4164,7 +4278,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="Benefits of the Vocabulary Acquisition Model" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">69 / 82</span>
+    <span class="top-bar__counter">69 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -4222,7 +4336,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--analysis" data-slide-title="VAM Activity 1 · Pre test design lab" data-slide-type="Activity">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">70 / 82</span>
+    <span class="top-bar__counter">70 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="analysis-header">
@@ -4278,7 +4392,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--divider" data-slide-title="Section divider — Integrative Model" data-slide-type="Section">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">71 / 82</span>
+    <span class="top-bar__counter">71 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="eyebrow eyebrow--plain">Section 02 of 02</div>
@@ -4293,7 +4407,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Basis for the Integrative model" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">72 / 82</span>
+    <span class="top-bar__counter">72 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -4332,7 +4446,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--wrapup" data-slide-title="The five step model — overview" data-slide-type="Wrapup">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">73 / 82</span>
+    <span class="top-bar__counter">73 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="wrapup-header">
@@ -4346,183 +4460,428 @@ button { font: inherit; cursor: pointer; }
         <div class="wrapup-step__time">Teacher</div>
         <h3 class="wrapup-step__title">Plan the data set and the path</h3>
         <p class="wrapup-step__body">Curate a data set that contains the target pattern. Identify what students should be able to generalize. Decide what they describe, compare, hypothesize, and conclude.</p>
+        <div class="wrapup-step__example">
+          <div class="wrapup-step__example-label">EXAMPLE · 5TH GRADE WATER CYCLE</div>
+          <p class="wrapup-step__example-body">Teacher curates eight phenomena (rain, evaporation, snow, transpiration, dew, fog, frost, condensation) and four attributes. Target: <em>"Water cycles between Earth and sky as energy changes state."</em></p>
+        </div>
       </li>
       <li class="wrapup-step">
         <div class="wrapup-step__num">Step 02</div>
         <div class="wrapup-step__time">Students</div>
         <h3 class="wrapup-step__title">Describe, compare, find patterns</h3>
         <p class="wrapup-step__body">Students examine the data set together. Name attributes. Compare across items. Identify similarities and differences. Surface candidate patterns.</p>
+        <div class="wrapup-step__example">
+          <div class="wrapup-step__example-label">EXAMPLE · 5TH GRADE WATER CYCLE</div>
+          <p class="wrapup-step__example-body">Pairs scan the matrix and call out patterns. <em>"Evaporation and transpiration send water up. Rain and snow fall down."</em> They group items by direction and by change of state.</p>
+        </div>
       </li>
       <li class="wrapup-step">
         <div class="wrapup-step__num">Step 03</div>
         <div class="wrapup-step__time">Students</div>
         <h3 class="wrapup-step__title">Explain similarities and differences</h3>
         <p class="wrapup-step__body">Students propose explanations for the patterns they noticed. Why does this group share these features. Why does that one diverge. The explanation moves them from observation to reasoning.</p>
+        <div class="wrapup-step__example">
+          <div class="wrapup-step__example-label">EXAMPLE · 5TH GRADE WATER CYCLE</div>
+          <p class="wrapup-step__example-body">Pairs propose reasons. <em>"Heat adds energy. Liquid becomes vapor. Water goes up."</em> <em>"Cold removes energy. Water comes down."</em> Pattern: energy in equals up, energy out equals down.</p>
+        </div>
       </li>
       <li class="wrapup-step">
         <div class="wrapup-step__num">Step 04</div>
         <div class="wrapup-step__time">Students</div>
         <h3 class="wrapup-step__title">Hypothesize under new conditions</h3>
         <p class="wrapup-step__body">What would happen if a variable changed. Students predict outcomes for cases not in the data set. This move tests the durability of their thinking.</p>
+        <div class="wrapup-step__example">
+          <div class="wrapup-step__example-label">EXAMPLE · 5TH GRADE WATER CYCLE</div>
+          <p class="wrapup-step__example-body">Teacher asks: <em>"What would happen on a planet with no sun?"</em> Pairs predict: <em>"No evaporation, no clouds, no rain. The cycle stops."</em> Then: <em>"What if the air stayed warm year round?"</em></p>
+        </div>
       </li>
       <li class="wrapup-step">
         <div class="wrapup-step__num">Step 05</div>
         <div class="wrapup-step__time">Students</div>
         <h3 class="wrapup-step__title">Make broad generalizations</h3>
         <p class="wrapup-step__body">Students state, in their own language, what the pattern teaches about the discipline. The generalization is the payoff. It carries into new units, new courses, and adult life.</p>
+        <div class="wrapup-step__example">
+          <div class="wrapup-step__example-label">EXAMPLE · 5TH GRADE WATER CYCLE</div>
+          <p class="wrapup-step__example-body">A student writes: <em>"Water moves in a cycle between Earth and atmosphere, changing state as energy is added or removed."</em> Teacher reveals the textbook version. Class compares wordings.</p>
+        </div>
       </li>
     </ol>
   </div>
   <div class="deck-credit">Built with <strong>Anyra</strong></div>
 </section>
 
-<section class="slide slide--bulleted" data-slide-title="Step 01 · Planning for the Integrative model" data-slide-type="Bulleted">
+<section class="slide slide--compare" data-slide-title="The five step process · flowchart with examples" data-slide-type="Compare">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">74 / 82</span>
-  </div>
-  <div class="slide__inner">
-    <div class="bulleted-grid">
-      <header class="bulleted-header">
-        <div class="eyebrow">Step 01 · the teacher move</div>
-        <h2 class="editorial-title bulleted-title">Plan the data set, the path, and the prompts before the lesson begins.</h2>
-        <p class="bulleted-intro">The success of an Integrative lesson is almost entirely decided in planning. The data set you choose determines what students can see and what they cannot (<em>Estes & Mintz, 2016</em>).</p>
-      </header>
-      <ol class="bulleted-list">
-        <li class="bulleted-item">
-          <span class="bulleted-num">01</span>
-          <p class="bulleted-body"><strong>Name the target generalization.</strong> Write the sentence you want students to be able to say by the end of class. <em>Ecosystems are defined by the interactions between species and their environment.</em> Keep it visible only to you for now.</p>
-        </li>
-        <li class="bulleted-item">
-          <span class="bulleted-num">02</span>
-          <p class="bulleted-body"><strong>Curate a data set that contains the pattern.</strong> Six to ten items, organized in a matrix. Each item has the same attributes. Choose items whose comparison surfaces the target pattern without naming it.</p>
-        </li>
-        <li class="bulleted-item">
-          <span class="bulleted-num">03</span>
-          <p class="bulleted-body"><strong>Decide the attributes students will compare across.</strong> Two to four columns of attributes. Label them in student facing language. The attributes are the lens that lets the pattern come into focus.</p>
-        </li>
-        <li class="bulleted-item">
-          <span class="bulleted-num">04</span>
-          <p class="bulleted-body"><strong>Draft the prompts for each student step.</strong> Step 02: <em>What do you notice. What do you wonder.</em> Step 03: <em>Why might these group together.</em> Step 04: <em>What would change if.</em> Step 05: <em>Write your generalization in one sentence.</em></p>
-        </li>
-        <li class="bulleted-item">
-          <span class="bulleted-num">05</span>
-          <p class="bulleted-body"><strong>Plan the scaffolds for ELLs.</strong> Sentence frames at each step. Visual or image alongside each data item. A partner protocol so every student speaks the data aloud before writing about it.</p>
-        </li>
-      </ol>
-    </div>
-  </div>
-  <div class="deck-credit">Built with <strong>Anyra</strong></div>
-</section>
-
-<section class="slide slide--compare" data-slide-title="Steps 02 and 03 · Describe and explain" data-slide-type="Compare">
-  <div class="top-bar">
-    <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">75 / 82</span>
+    <span class="top-bar__counter">74 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="compare-header">
-      <div class="eyebrow">Steps 02 and 03 · the student moves</div>
-      <h2 class="editorial-title callout-title">Describe what you see. Then explain why it might be so.</h2>
+      <div class="eyebrow">Process flowchart · steps 01 through 05</div>
+      <h2 class="editorial-title callout-title">The Integrative Model as a five step workflow. Each step produces an artifact the next step depends on.</h2>
     </header>
-    <div class="compare-grid">
-      <div class="compare-col compare-col--before">
-        <div class="compare-col-eyebrow">Step 02 · Describe, compare, find patterns</div>
-        <h3 class="compare-col-title">Students name what is in front of them, attribute by attribute.</h3>
-        <ul class="compare-list">
-          <li>Read the data set together. Name each item aloud</li>
-          <li>For each attribute column, name what is the same across items and what differs</li>
-          <li>In pairs, list three patterns you notice. Use the frame: <em>I notice that ___ because ___</em></li>
-          <li>Group items that share patterns. Defend the grouping out loud</li>
-          <li>Surface anomalies. Items that do not fit a pattern are useful clues, not problems</li>
-        </ul>
+    <div class="int-flow int-flow--horizontal">
+      <div class="int-flow__node int-flow__node--teacher">
+        <div class="int-flow__num">Step 01 · Teacher</div>
+        <h3 class="int-flow__title">Plan</h3>
+        <p class="int-flow__body">Curate the data set, choose attributes, and name the target generalization.</p>
+        <p class="int-flow__example">Eight phenomena · four attributes · target <em>"Water cycles between Earth and sky."</em></p>
       </div>
-      <div class="compare-col compare-col--after">
-        <div class="compare-col-eyebrow">Step 03 · Explain similarities and differences</div>
-        <h3 class="compare-col-title">Students reason about why the patterns might exist.</h3>
-        <ul class="compare-list">
-          <li>For each pattern noticed, propose a reason. <em>These group together because they ___</em></li>
-          <li>For each anomaly, propose a reason. <em>This one is different because ___</em></li>
-          <li>Compare explanations across pairs. Where do they converge. Where do they diverge</li>
-          <li>Surface the strongest explanation in the room. Defend with evidence from the data set</li>
-          <li>Note questions you cannot yet answer. They become the hypotheses in Step 04</li>
-        </ul>
+      <div class="int-flow__arrow">&rarr;</div>
+      <div class="int-flow__node">
+        <div class="int-flow__num">Step 02 · Students</div>
+        <h3 class="int-flow__title">Describe</h3>
+        <p class="int-flow__body">Read the data set. Name attributes. Compare items. Surface candidate patterns.</p>
+        <p class="int-flow__example">Pairs notice <em>"Evaporation sends water up. Rain falls down."</em></p>
+      </div>
+      <div class="int-flow__arrow">&rarr;</div>
+      <div class="int-flow__node">
+        <div class="int-flow__num">Step 03 · Students</div>
+        <h3 class="int-flow__title">Explain</h3>
+        <p class="int-flow__body">Propose reasons for the patterns. Move from observation to reasoning.</p>
+        <p class="int-flow__example">Pairs reason <em>"Heat adds energy. Liquid becomes vapor."</em></p>
+      </div>
+      <div class="int-flow__arrow">&rarr;</div>
+      <div class="int-flow__node">
+        <div class="int-flow__num">Step 04 · Students</div>
+        <h3 class="int-flow__title">Hypothesize</h3>
+        <p class="int-flow__body">Predict outcomes under new conditions. Test the durability of the thinking.</p>
+        <p class="int-flow__example">Teacher asks <em>"What if there were no sun?"</em></p>
+      </div>
+      <div class="int-flow__arrow">&rarr;</div>
+      <div class="int-flow__node">
+        <div class="int-flow__num">Step 05 · Students</div>
+        <h3 class="int-flow__title">Generalize</h3>
+        <p class="int-flow__body">State the pattern in disciplinary language. Compare with the textbook version.</p>
+        <p class="int-flow__example">Student writes <em>"Water cycles as energy changes state."</em></p>
       </div>
     </div>
   </div>
   <div class="deck-credit">Built with <strong>Anyra</strong></div>
 </section>
 
-<section class="slide slide--compare" data-slide-title="Steps 04 and 05 · Hypothesize and generalize" data-slide-type="Compare">
+<section class="slide slide--compare" data-slide-title="Step 01 · sub flowcharts" data-slide-type="Compare">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">76 / 82</span>
+    <span class="top-bar__counter">75 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="compare-header">
-      <div class="eyebrow">Steps 04 and 05 · the higher order moves</div>
-      <h2 class="editorial-title callout-title">Test the thinking under new conditions. Then state what holds across them.</h2>
+      <div class="eyebrow">Step 01 · the teacher move, decomposed</div>
+      <h2 class="editorial-title callout-title">Inside Step 01 · what the teacher does before students walk in.</h2>
     </header>
-    <div class="compare-grid">
-      <div class="compare-col compare-col--before">
-        <div class="compare-col-eyebrow">Step 04 · Hypothesize under new conditions</div>
-        <h3 class="compare-col-title">Students predict what would happen if a variable changed.</h3>
-        <ul class="compare-list">
-          <li>Teacher offers a what if. <em>What if this item had this attribute instead</em></li>
-          <li>Pairs predict the outcome. <em>It would behave like the X group because ___</em></li>
-          <li>Surface the reasoning, not just the prediction. The explanation is the artifact</li>
-          <li>Compare predictions across pairs. Where do they agree, where do they diverge</li>
-          <li>Stress test the predictions with a second what if. Patterns that survive multiple what ifs are durable</li>
-        </ul>
+    <div class="int-flow-grid">
+      <div class="int-flow-col">
+        <div class="int-flow-col__title">DESIGN THE DATA SET</div>
+        <h3 class="int-flow-col__sub">Curate the substrate. Pick what students will see.</h3>
+        <div class="int-flow int-flow--vertical">
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">01a · Teacher</div>
+            <h3 class="int-flow__title">Name the target generalization</h3>
+            <p class="int-flow__body">Write the sentence students should be able to say by the end. Keep it private for now.</p>
+            <p class="int-flow__example">Target: <em>"Water cycles between Earth and sky as energy changes state."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">01b · Teacher</div>
+            <h3 class="int-flow__title">Curate items with the pattern</h3>
+            <p class="int-flow__body">Six to ten phenomena. Each must contain the pattern without naming it.</p>
+            <p class="int-flow__example">Rain, evaporation, snow, transpiration, dew, fog, frost, condensation.</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">01c · Teacher</div>
+            <h3 class="int-flow__title">Choose comparison attributes</h3>
+            <p class="int-flow__body">Two to four columns. Student facing language. The lens that brings the pattern into focus.</p>
+            <p class="int-flow__example">Where it happens · water's state · direction · energy in or out.</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">01d · Teacher</div>
+            <h3 class="int-flow__title">Build and stress test the matrix</h3>
+            <p class="int-flow__body">Items down. Attributes across. Could a fifth grader see the pattern without being told?</p>
+            <p class="int-flow__example">Eight rows by four columns. Pattern visible after careful comparison.</p>
+          </div>
+        </div>
       </div>
-      <div class="compare-col compare-col--after">
-        <div class="compare-col-eyebrow">Step 05 · Make broad generalizations</div>
-        <h3 class="compare-col-title">Students state, in their own language, the pattern that holds.</h3>
-        <ul class="compare-list">
-          <li>In writing, each student drafts one sentence that captures the pattern. <em>In this discipline, ___</em></li>
-          <li>Share generalizations aloud. Compare phrasings. Refine</li>
-          <li>Reveal the disciplinary version (the textbook generalization). Compare to student wording</li>
-          <li>Ask where the student version goes further or reads more honestly than the textbook</li>
-          <li>Keep the student generalization on the wall. Reference it in the next unit, when it earns its keep</li>
-        </ul>
+      <div class="int-flow-col">
+        <div class="int-flow-col__title">DESIGN THE TALK</div>
+        <h3 class="int-flow-col__sub">Plan the prompts and the scaffolds before the lesson starts.</h3>
+        <div class="int-flow int-flow--vertical">
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">01e · Teacher</div>
+            <h3 class="int-flow__title">Draft Steps 02 to 05 prompts</h3>
+            <p class="int-flow__body">Each prompt opens a cognitive move without giving away the pattern.</p>
+            <p class="int-flow__example">Step 02: <em>"What do you notice. What do you wonder."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">01f · Teacher</div>
+            <h3 class="int-flow__title">Plan ELL scaffolds</h3>
+            <p class="int-flow__body">Sentence frames per step. Visual per item. Partner protocol so every student speaks the data.</p>
+            <p class="int-flow__example">Photo next to each phenomenon. L1 cognates highlighted.</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">01g · Teacher</div>
+            <h3 class="int-flow__title">Decide reveal vs withhold</h3>
+            <p class="int-flow__body">What the teacher says, and what stays hidden so students can discover.</p>
+            <p class="int-flow__example">Reveal the attributes. Withhold the generalization until Step 05.</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">01h · Teacher</div>
+            <h3 class="int-flow__title">Prepare the textbook version</h3>
+            <p class="int-flow__body">Have the disciplinary version ready for Step 05 comparison with student wordings.</p>
+            <p class="int-flow__example"><em>"The hydrologic cycle: phase changes driven by solar energy."</em></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="deck-credit">Built with <strong>Anyra</strong></div>
 </section>
 
-<section class="slide slide--compare" data-slide-title="Evaluating learning and meeting individual needs in the Integrative model" data-slide-type="Compare">
+<section class="slide slide--compare" data-slide-title="Steps 02 and 03 · sub flowcharts" data-slide-type="Compare">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">77 / 82</span>
+    <span class="top-bar__counter">76 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="compare-header">
-      <div class="eyebrow">Assessment and differentiation</div>
-      <h2 class="editorial-title callout-title">How you measure inductive thinking and how you reach every student inside it.</h2>
+      <div class="eyebrow">Steps 02 and 03 · decomposed</div>
+      <h2 class="editorial-title callout-title">Inside Steps 02 and 03 · what students actually do, in sequence.</h2>
     </header>
-    <div class="compare-grid">
-      <div class="compare-col compare-col--before">
-        <div class="compare-col-eyebrow">Evaluating learning in the Integrative model</div>
-        <h3 class="compare-col-title">Assess the reasoning, not the answer.</h3>
-        <ul class="compare-list">
-          <li>Score the student's generalization (Step 05) for accuracy, specificity, and disciplinary language</li>
-          <li>Score the explanations from Step 03 for use of evidence from the data set</li>
-          <li>Track participation across steps. A silent student in Step 02 needs a different entry, not a lower grade</li>
-          <li>Use the hypotheses from Step 04 as a window into transfer. Strong hypotheses signal durable understanding</li>
-          <li>Compare pre lesson and post lesson generalizations. Growth is the measure</li>
-        </ul>
+    <div class="int-flow-grid">
+      <div class="int-flow-col">
+        <div class="int-flow-col__title">STEP 02 · DESCRIBE</div>
+        <h3 class="int-flow-col__sub">Name what is in front of you, attribute by attribute.</h3>
+        <div class="int-flow int-flow--vertical">
+          <div class="int-flow__node">
+            <div class="int-flow__num">02a</div>
+            <h3 class="int-flow__title">Read the data set</h3>
+            <p class="int-flow__body">Name each item aloud. Take a minute to absorb the matrix.</p>
+            <p class="int-flow__example">Pairs read all eight phenomena out loud.</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">02b</div>
+            <h3 class="int-flow__title">Name attributes</h3>
+            <p class="int-flow__body">For each column, name what is the same across items and what differs.</p>
+            <p class="int-flow__example"><em>"Some happen at night. Some during the day."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">02c</div>
+            <h3 class="int-flow__title">Surface patterns</h3>
+            <p class="int-flow__body">Use the sentence frame <em>I notice that ___ because ___.</em></p>
+            <p class="int-flow__example"><em>"Frost and dew both form when air cools."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">02d</div>
+            <h3 class="int-flow__title">Group and flag anomalies</h3>
+            <p class="int-flow__body">Items that do not fit a pattern are clues, not problems.</p>
+            <p class="int-flow__example">Fog burning off does not fit either group cleanly.</p>
+          </div>
+        </div>
       </div>
-      <div class="compare-col compare-col--after">
-        <div class="compare-col-eyebrow">Meeting individual needs</div>
-        <h3 class="compare-col-title">Differentiate the talk supports, not the thinking.</h3>
-        <ul class="compare-list">
-          <li>Newcomers receive image anchored data items and sentence frames in their L1 alongside English</li>
-          <li>Developing ELLs receive frames calibrated to ELPAC level for each step</li>
-          <li>Students with IEPs receive a smaller data set with the same attributes, paced across two sessions</li>
-          <li>Fluent students extend with a second data set that breaks the pattern, then are asked to revise their generalization</li>
-          <li>The target generalization is the same for everyone. The route in is differentiated</li>
-        </ul>
+      <div class="int-flow-col">
+        <div class="int-flow-col__title">STEP 03 · EXPLAIN</div>
+        <h3 class="int-flow-col__sub">Reason about why the patterns might exist.</h3>
+        <div class="int-flow int-flow--vertical">
+          <div class="int-flow__node">
+            <div class="int-flow__num">03a</div>
+            <h3 class="int-flow__title">Propose reasons</h3>
+            <p class="int-flow__body">For each pattern, propose a reason using <em>These group because ___.</em></p>
+            <p class="int-flow__example"><em>"Heat adds energy. Liquid becomes vapor."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">03b</div>
+            <h3 class="int-flow__title">Compare explanations</h3>
+            <p class="int-flow__body">Where do pair explanations converge. Where do they diverge.</p>
+            <p class="int-flow__example">Two pairs agree on energy. One pair adds temperature.</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">03c</div>
+            <h3 class="int-flow__title">Surface strongest</h3>
+            <p class="int-flow__body">Defend with evidence from the data set, not from outside knowledge.</p>
+            <p class="int-flow__example">Class agrees: energy in equals up, energy out equals down.</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">03d</div>
+            <h3 class="int-flow__title">Note open questions</h3>
+            <p class="int-flow__body">Unanswered questions become hypotheses in Step 04.</p>
+            <p class="int-flow__example"><em>"What if energy is gradual, not sudden?"</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="deck-credit">Built with <strong>Anyra</strong></div>
+</section>
+
+<section class="slide slide--compare" data-slide-title="Steps 04 and 05 · sub flowcharts" data-slide-type="Compare">
+  <div class="top-bar">
+    <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
+    <span class="top-bar__counter">77 / 83</span>
+  </div>
+  <div class="slide__inner">
+    <header class="compare-header">
+      <div class="eyebrow">Steps 04 and 05 · decomposed</div>
+      <h2 class="editorial-title callout-title">Inside Steps 04 and 05 · how students test and state what holds.</h2>
+    </header>
+    <div class="int-flow-grid">
+      <div class="int-flow-col">
+        <div class="int-flow-col__title">STEP 04 · HYPOTHESIZE</div>
+        <h3 class="int-flow-col__sub">Predict what would happen if a variable changed.</h3>
+        <div class="int-flow int-flow--vertical">
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">04a · Teacher</div>
+            <h3 class="int-flow__title">Offer a what if</h3>
+            <p class="int-flow__body">A condition not in the data set. Change one variable.</p>
+            <p class="int-flow__example"><em>"What would happen on a planet with no sun?"</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">04b</div>
+            <h3 class="int-flow__title">Pairs predict and reason</h3>
+            <p class="int-flow__body">Surface the reasoning, not just the prediction. The explanation is the artifact.</p>
+            <p class="int-flow__example"><em>"No evaporation, no clouds, no rain. The cycle stops."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">04c</div>
+            <h3 class="int-flow__title">Compare predictions</h3>
+            <p class="int-flow__body">Where do predictions agree. Where do they diverge.</p>
+            <p class="int-flow__example">Two pairs say "cycle stops." One pair says "very slow cycle."</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">04d</div>
+            <h3 class="int-flow__title">Stress test</h3>
+            <p class="int-flow__body">A second what if. Patterns that survive multiple are durable.</p>
+            <p class="int-flow__example"><em>"What if the air stayed warm year round?"</em></p>
+          </div>
+        </div>
+      </div>
+      <div class="int-flow-col">
+        <div class="int-flow-col__title">STEP 05 · GENERALIZE</div>
+        <h3 class="int-flow-col__sub">State the pattern that holds, in your own language.</h3>
+        <div class="int-flow int-flow--vertical">
+          <div class="int-flow__node">
+            <div class="int-flow__num">05a</div>
+            <h3 class="int-flow__title">Each student drafts</h3>
+            <p class="int-flow__body">One sentence in writing that captures the pattern.</p>
+            <p class="int-flow__example"><em>"Water cycles as energy changes state."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">05b</div>
+            <h3 class="int-flow__title">Share and compare wordings</h3>
+            <p class="int-flow__body">Hear three or four student versions aloud. Note differences.</p>
+            <p class="int-flow__example">One student emphasizes energy. Another emphasizes direction.</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">05c · Teacher</div>
+            <h3 class="int-flow__title">Reveal the textbook</h3>
+            <p class="int-flow__body">Compare student wording to the disciplinary version.</p>
+            <p class="int-flow__example">Textbook: <em>"The hydrologic cycle: phase changes driven by solar energy."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">05d</div>
+            <h3 class="int-flow__title">Keep and refine</h3>
+            <p class="int-flow__body">Often the student version reads more honestly. Keep it on the wall.</p>
+            <p class="int-flow__example">Class generalization joins the unit word wall.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="deck-credit">Built with <strong>Anyra</strong></div>
+</section>
+
+<section class="slide slide--compare" data-slide-title="Evaluating and meeting individual needs · flowcharts" data-slide-type="Compare">
+  <div class="top-bar">
+    <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
+    <span class="top-bar__counter">78 / 83</span>
+  </div>
+  <div class="slide__inner">
+    <header class="compare-header">
+      <div class="eyebrow">Assessment and differentiation · in flow</div>
+      <h2 class="editorial-title callout-title">How you measure inductive thinking, and how you reach every student inside it.</h2>
+    </header>
+    <div class="int-flow-grid">
+      <div class="int-flow-col">
+        <div class="int-flow-col__title">EVALUATING LEARNING</div>
+        <h3 class="int-flow-col__sub">Assess the reasoning, not the answer.</h3>
+        <div class="int-flow int-flow--vertical">
+          <div class="int-flow__node">
+            <div class="int-flow__num">Pre lesson</div>
+            <h3 class="int-flow__title">Baseline generalization</h3>
+            <p class="int-flow__body">Ask for a one sentence generalization on the topic before the lesson.</p>
+            <p class="int-flow__example">Pre: <em>"Water just goes around somehow."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">During</div>
+            <h3 class="int-flow__title">Track explanations and participation</h3>
+            <p class="int-flow__body">Score Step 03 explanations. Tally who is speaking when.</p>
+            <p class="int-flow__example">A silent student in Step 02 needs a different entry, not a lower grade.</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">Step 05</div>
+            <h3 class="int-flow__title">Score the generalization</h3>
+            <p class="int-flow__body">Accuracy. Specificity. Use of disciplinary language.</p>
+            <p class="int-flow__example">Post: <em>"Water cycles as energy changes state."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">Post</div>
+            <h3 class="int-flow__title">Measure growth</h3>
+            <p class="int-flow__body">Compare pre and post wordings. Growth is the measure.</p>
+            <p class="int-flow__example">"Just goes around" &rarr; "cycles as energy changes state."</p>
+          </div>
+        </div>
+      </div>
+      <div class="int-flow-col">
+        <div class="int-flow-col__title">MEETING INDIVIDUAL NEEDS</div>
+        <h3 class="int-flow-col__sub">Differentiate the talk supports, not the thinking.</h3>
+        <div class="int-flow int-flow--vertical">
+          <div class="int-flow__node int-flow__node--teacher">
+            <div class="int-flow__num">Target</div>
+            <h3 class="int-flow__title">Same generalization for all</h3>
+            <p class="int-flow__body">The destination does not change. Only the entry point.</p>
+            <p class="int-flow__example">Target: <em>"Water cycles as energy changes state."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">Newcomer · ELPAC 1</div>
+            <h3 class="int-flow__title">Image anchored data</h3>
+            <p class="int-flow__body">A photo next to each phenomenon. L1 sentence frames alongside English.</p>
+            <p class="int-flow__example">Picture of rain beside the word "rain."</p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">Developing ELL · 2 to 3</div>
+            <h3 class="int-flow__title">ELPAC tuned frames</h3>
+            <p class="int-flow__body">Sentence frames calibrated to current proficiency level at each step.</p>
+            <p class="int-flow__example"><em>"I notice that ___ and ___ both ___."</em></p>
+          </div>
+          <div class="int-flow__arrow">&darr;</div>
+          <div class="int-flow__node">
+            <div class="int-flow__num">IEP and fluent</div>
+            <h3 class="int-flow__title">Pace and extend</h3>
+            <p class="int-flow__body">IEP: smaller data set, paced across two sessions. Fluent: second data set that breaks the pattern.</p>
+            <p class="int-flow__example">Fluent student then revises their generalization.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -4532,7 +4891,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--concepts" data-slide-title="Benefits of the Integrative model" data-slide-type="Concepts">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">78 / 82</span>
+    <span class="top-bar__counter">79 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="concept-header">
@@ -4592,31 +4951,31 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--analysis" data-slide-title="Integrative Activity 1 · Build a content area data set" data-slide-type="Activity">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">79 / 82</span>
+    <span class="top-bar__counter">80 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="analysis-header">
-      <div class="analysis-eyebrow">In class activity · 30 minutes · pairs</div>
+      <div class="analysis-eyebrow">In class activity · 50 minutes · pairs</div>
       <h2 class="analysis-title">Activity 1 · Build a data set that contains a pattern you want students to find.</h2>
-      <p class="analysis-sub">Pair up. Pick a unit from either partner's content area, or any unit you both find compelling. Cross discipline pairs are welcome. Curate a six to ten item data set, identify the target generalization, and draft the prompts students would respond to at each step.</p>
+      <p class="analysis-sub">Pair up. Pick a unit from either partner's content area, or any unit you both find compelling. Cross discipline pairs are welcome. Curate a six to ten item data set, identify the target generalization, and draft the prompts students would respond to at each step. You will share your work aloud with the class at the end.</p>
     </header>
     <div class="analysis-grid">
       <article class="analysis-block">
         <div class="analysis-block__num">Step 01 · Choose</div>
-        <div class="analysis-block__time">10 min</div>
+        <div class="analysis-block__time">15 min</div>
         <h3 class="analysis-block__title">Pick the unit, the pattern, and the data set.</h3>
         <p class="analysis-block__intro">Decide together what students should generalize, then curate items that contain the pattern.</p>
         <ol class="analysis-questions">
           <li>Name the unit and the target generalization in one sentence.</li>
           <li>List six to ten items students will compare. Pick items whose comparison surfaces the pattern.</li>
           <li>Decide two to four attributes students will use to compare items.</li>
-          <li>Build a matrix on chart paper: items down the left, attributes across the top.</li>
+          <li>Build a matrix: items down the left, attributes across the top.</li>
           <li>Stress test the data set: would a fifth grader be able to see the pattern without being told?</li>
         </ol>
       </article>
       <article class="analysis-block">
         <div class="analysis-block__num">Step 02 · Draft prompts</div>
-        <div class="analysis-block__time">10 min</div>
+        <div class="analysis-block__time">15 min</div>
         <h3 class="analysis-block__title">Write the student facing prompts for Steps 02 through 05.</h3>
         <p class="analysis-block__intro">Each prompt should put a specific cognitive move on the table without giving away the generalization.</p>
         <ol class="analysis-questions">
@@ -4624,20 +4983,20 @@ button { font: inherit; cursor: pointer; }
           <li>Step 03 prompt: why might these group together. Provide a sentence frame.</li>
           <li>Step 04 what if prompt: what would change if a specific attribute were different.</li>
           <li>Step 05 prompt: write one sentence that captures the pattern in disciplinary language.</li>
-          <li>Layer two ELL scaffolds across the prompts. Name which ELPAC level they reach.</li>
+          <li>Read each prompt aloud to your partner. Tighten any wording that gives the pattern away.</li>
         </ol>
       </article>
       <article class="analysis-block">
-        <div class="analysis-block__num">Step 03 · Trade</div>
-        <div class="analysis-block__time">10 min</div>
-        <h3 class="analysis-block__title">Swap data sets with another pair and stress test.</h3>
-        <p class="analysis-block__intro">A second pair will surface what your own thinking hid.</p>
+        <div class="analysis-block__num">Step 03 · Share aloud</div>
+        <div class="analysis-block__time">20 min</div>
+        <h3 class="analysis-block__title">Share your data set and prompts with the class.</h3>
+        <p class="analysis-block__intro">Each pair takes about three minutes to walk the rest of us through what you built.</p>
         <ol class="analysis-questions">
-          <li>Take the other pair's data set as if you were a Level 2 ELL student.</li>
-          <li>Surface the pattern aloud, without the generalization sentence. How long did it take?</li>
-          <li>Flag any item whose attributes would block a student from seeing the pattern.</li>
-          <li>Suggest one revision that lowers the entry without giving the pattern away.</li>
-          <li>Return the data set with two strengths and two revisions. Take yours back and refine.</li>
+          <li>State the unit and the target generalization in one sentence.</li>
+          <li>Walk through the data set items aloud. Name a few of the most telling examples.</li>
+          <li>Explain your comparison attributes. Why these and not others.</li>
+          <li>Demonstrate one pattern you would expect a student to surface in Step 02.</li>
+          <li>Take one question from the class before the next pair shares.</li>
         </ol>
       </article>
     </div>
@@ -4648,38 +5007,38 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--wrapup" data-slide-title="Integrative Activity 2 · Lesson conversion lab" data-slide-type="Activity">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">80 / 82</span>
+    <span class="top-bar__counter">81 / 83</span>
   </div>
   <div class="slide__inner">
     <header class="wrapup-header">
-      <div class="wrapup-eyebrow">Activity 2 · 30 minutes · pairs</div>
+      <div class="wrapup-eyebrow">Activity 2 · 55 minutes · pairs</div>
       <h2 class="wrapup-title">Activity 2 · Convert a direct instruction lesson into an Integrative one.</h2>
-      <p class="wrapup-sub">Pair up. Take the sample lesson plan provided in class. It uses direct instruction throughout. Your job is to redesign it as a five step Integrative discussion. Pairs may come from any content areas. Cross discipline pairs often see the model's portability more clearly.</p>
+      <p class="wrapup-sub">Pair up with someone you did not work with in Activity 1. Take the sample lesson plan on the next slide. It uses direct instruction throughout. Your job is to redesign it as a five step Integrative discussion. Pairs may come from any content areas. Cross discipline pairs often see the model's portability more clearly.</p>
     </header>
     <ol class="wrapup-steps">
       <li class="wrapup-step">
         <div class="wrapup-step__num">Step 01</div>
-        <div class="wrapup-step__time">6 min</div>
+        <div class="wrapup-step__time">10 min</div>
         <h3 class="wrapup-step__title">Read and diagnose</h3>
-        <p class="wrapup-step__body">Read the sample plan together. Identify the target generalization in one sentence. Highlight every place the teacher tells students something they could have discovered through pattern finding instead.</p>
+        <p class="wrapup-step__body">The sample lesson plan is on the next slide. Read it together. Identify the target generalization in one sentence. Highlight every place the teacher tells students something they could have discovered through pattern finding instead.</p>
       </li>
       <li class="wrapup-step">
         <div class="wrapup-step__num">Step 02</div>
-        <div class="wrapup-step__time">10 min</div>
+        <div class="wrapup-step__time">15 min</div>
         <h3 class="wrapup-step__title">Curate the data set</h3>
-        <p class="wrapup-step__body">Build a six to ten item data set that surfaces the same generalization through comparison. Decide the two to four attributes students will compare across. Sketch the matrix on chart paper.</p>
+        <p class="wrapup-step__body">Build a six to ten item data set that surfaces the same generalization through comparison. Decide the two to four attributes students will compare across. Write it down so you can share it aloud when the activity is complete.</p>
       </li>
       <li class="wrapup-step">
         <div class="wrapup-step__num">Step 03</div>
-        <div class="wrapup-step__time">8 min</div>
+        <div class="wrapup-step__time">15 min</div>
         <h3 class="wrapup-step__title">Draft the five student prompts</h3>
-        <p class="wrapup-step__body">Write one student facing prompt for each of Steps 02 through 05 of the Integrative model. Provide a sentence frame for each. Layer two ELL scaffolds across the steps. Name which ELPAC level they reach.</p>
+        <p class="wrapup-step__body">Write one student facing prompt for each of Steps 02 through 05 of the Integrative model. Provide a sentence frame for each.</p>
       </li>
       <li class="wrapup-step">
         <div class="wrapup-step__num">Step 04</div>
-        <div class="wrapup-step__time">6 min</div>
-        <h3 class="wrapup-step__title">Compare across pairs</h3>
-        <p class="wrapup-step__body">Find another pair. Trade redesigns. Name one decision they made differently from you. Identify one element from their version you would adopt. Keep your refined draft as your Integrative artifact for the unit.</p>
+        <div class="wrapup-step__time">15 min</div>
+        <h3 class="wrapup-step__title">Share aloud to the class</h3>
+        <p class="wrapup-step__body">Walk the rest of the class through your redesign. Name the target generalization, the data set, the attributes you chose, and one of your prompts in full. Close by naming one move you would make differently if you taught this tomorrow.</p>
       </li>
     </ol>
   </div>
@@ -4689,7 +5048,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--bulleted" data-slide-title="Sample lesson plan for Activity 2" data-slide-type="Bulleted">
   <div class="top-bar">
     <span class="top-bar__title">Models in practice · Vocabulary and Integrative</span>
-    <span class="top-bar__counter">81 / 82</span>
+    <span class="top-bar__counter">82 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="bulleted-grid">
@@ -4728,7 +5087,7 @@ button { font: inherit; cursor: pointer; }
 <section class="slide slide--close" data-slide-title="Final close" data-slide-type="Close">
   <div class="top-bar">
     <span class="top-bar__title">Multilingual education · Class 02 · Nieto</span>
-    <span class="top-bar__counter">82 / 82</span>
+    <span class="top-bar__counter">83 / 83</span>
   </div>
   <div class="slide__inner">
     <div class="close-eyebrow">Your turn</div>
